@@ -1,0 +1,7 @@
+# Errors:
+/showcases/wireless/levelofdetail/,  -f omnetpp.ini -c General -r '$detail=="packet" && $modulation=="QAM-64" && $fecType=="ConvolutionalCoder" && $distance==110', 100s,            dd06-6579/tplx, PASS,
+/showcases/wireless/levelofdetail/,  -f omnetpp.ini -c General -r '$detail=="bit" && $modulation=="QAM-64" && $fecType=="ConvolutionalCoder" && $distance==250',    100s,            7511-b65f/tplx, PASS,
+/showcases/wireless/levelofdetail/,  -f omnetpp.ini -c General -r '$detail=="symbol" && $modulation=="QAM-64" && $fecType=="ConvolutionalCoder" && $distance==400', 100s,            2f23-8fb5/tplx, PASS,
+/showcases/wireless/levelofdetail/,  -f omnetpp.ini -c General -r '$detail=="packet" && $modulation=="QAM-64" && $fecType=="" && $distance==550',                   100s,            91fb-ddb5/tplx, PASS,
+/showcases/wireless/levelofdetail/,  -f omnetpp.ini -c General -r '$detail=="bit" && $modulation=="QAM-64" && $fecType=="" && $distance==225',                      100s,            8ad4-fcf9/tplx, PASS,
+/showcases/wireless/levelofdetail/,  -f omnetpp.ini -c General -r '$detail=="symbol" && $modulation=="QAM-64" && $fecType=="" && $distance==125',                   100s,            d007-5ea5/tplx, PASS,

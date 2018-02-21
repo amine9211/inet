@@ -112,8 +112,11 @@ PacketDissector::PacketDissector(const ProtocolDissectorRegistry& protocolDissec
 void PacketDissector::doDissectPacket(Packet *packet, const Protocol *protocol) const
 {
     auto protocolDissector = protocolDissectorRegistry.findProtocolDissector(protocol);
-    if (protocolDissector == nullptr)
+    if (protocolDissector == nullptr) {
+        if (protocol != nullptr)        // temporary tests: for detects missing protocoldissectors
+            throw cRuntimeError("Dissector not found for protocol '%s' ()", protocol->getName(), protocol->getDescriptiveName());
         protocolDissector = protocolDissectorRegistry.getProtocolDissector(nullptr);
+    }
     ProtocolDissectorCallback callback(*this);
     protocolDissector->dissect(packet, callback);
 }
